@@ -113,7 +113,6 @@ export type Subject = {
   name: string;
   icon: string;
   description: string;
-  students: string;
   cardBg: string;
   badgeBg: string;
   chapters: Chapter[];
@@ -125,7 +124,6 @@ export const subjectsCatalog: Subject[] = [
     name: "Mathematics",
     icon: "🧮",
     description: "Build strong math skills step by step.",
-    students: "1.2k",
     cardBg: "bg-violet-50",
     badgeBg: "bg-violet-100",
     chapters: buildChapters("mathematics", "Mathematics", 8),
@@ -135,7 +133,6 @@ export const subjectsCatalog: Subject[] = [
     name: "English",
     icon: "📖",
     description: "Improve reading, writing and speaking.",
-    students: "1k",
     cardBg: "bg-amber-50",
     badgeBg: "bg-amber-100",
     chapters: buildChapters("english", "English", 5),
@@ -145,7 +142,6 @@ export const subjectsCatalog: Subject[] = [
     name: "Science",
     icon: "🧪",
     description: "Discover the world through science.",
-    students: "980",
     cardBg: "bg-lime-50",
     badgeBg: "bg-lime-100",
     chapters: buildChapters("science", "Science", 1),
@@ -155,7 +151,6 @@ export const subjectsCatalog: Subject[] = [
     name: "Environment",
     icon: "🌍",
     description: "Learn about nature and our planet.",
-    students: "750",
     cardBg: "bg-sky-50",
     badgeBg: "bg-sky-100",
     chapters: buildChapters("environment", "Environment", 3),
@@ -165,7 +160,6 @@ export const subjectsCatalog: Subject[] = [
     name: "Social Studies",
     icon: "🗺️",
     description: "Explore history, people and civilizations.",
-    students: "820",
     cardBg: "bg-orange-50",
     badgeBg: "bg-orange-100",
     chapters: buildChapters("social-studies", "Social Studies", 2),
@@ -175,7 +169,6 @@ export const subjectsCatalog: Subject[] = [
     name: "Art & Craft",
     icon: "🎨",
     description: "Unleash creativity and imagination.",
-    students: "560",
     cardBg: "bg-rose-50",
     badgeBg: "bg-rose-100",
     chapters: buildChapters("art-craft", "Art & Craft", 1),
@@ -185,7 +178,6 @@ export const subjectsCatalog: Subject[] = [
     name: "Computer Skills",
     icon: "💻",
     description: "Learn essential digital skills for the future.",
-    students: "620",
     cardBg: "bg-blue-50",
     badgeBg: "bg-blue-100",
     chapters: buildChapters("computer-skills", "Computer Skills", 1),
@@ -195,7 +187,6 @@ export const subjectsCatalog: Subject[] = [
     name: "Music",
     icon: "🎵",
     description: "Discover the magic of music.",
-    students: "410",
     cardBg: "bg-fuchsia-50",
     badgeBg: "bg-fuchsia-100",
     chapters: buildChapters("music", "Music", 0),

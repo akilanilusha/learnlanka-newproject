@@ -17,7 +17,7 @@ export default async function TextbookChapters({ params }: PageProps<"/dashboard
   return (
     <div className="max-w-3xl mx-auto flex flex-col gap-6">
       <Link href="/dashboard/textbooks" className="text-sm text-brand-600 font-medium hover:underline self-start">
-        ← All Textbooks
+        ← All Subjects
       </Link>
 
       <div className={`rounded-xl2 ${subject.cardBg} p-6 flex items-center gap-4`}>
@@ -28,7 +28,7 @@ export default async function TextbookChapters({ params }: PageProps<"/dashboard
           <h2 className="text-2xl font-extrabold text-slate-800">{subject.name}</h2>
           <p className="text-slate-500">{subject.description}</p>
           <p className="text-xs text-slate-400 mt-1">
-            {subject.chapters.length} Chapters · 👥 {subject.students} students
+            {subject.chapters.length} Chapters
           </p>
         </div>
       </div>

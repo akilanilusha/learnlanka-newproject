@@ -13,6 +13,7 @@ export type Profile = {
   grade: number | null; // 1-12, only meaningful for role 'student'
   childName: string; // only meaningful for role 'parent'
   childGrade: number | null; // only meaningful for role 'parent'
+  favoriteSubjects: string[]; // subject ids the user starred
 };
 
 const defaultProfile: Profile = {
@@ -22,6 +23,7 @@ const defaultProfile: Profile = {
   grade: null,
   childName: "",
   childGrade: null,
+  favoriteSubjects: [],
 };
 
 type UserContextValue = {
@@ -29,6 +31,7 @@ type UserContextValue = {
   hydrated: boolean;
   completeOnboarding: (data: Partial<Profile>) => void;
   resetProfile: () => void;
+  toggleFavoriteSubject: (subjectId: string) => void;
 };
 
 const UserContext = createContext<UserContextValue | null>(null);
@@ -37,7 +40,9 @@ function loadProfile(): Profile {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return defaultProfile;
-    return { ...defaultProfile, ...JSON.parse(raw) };
+    const stored: Profile = { ...defaultProfile, ...JSON.parse(raw) };
+    if (!Array.isArray(stored.favoriteSubjects)) stored.favoriteSubjects = [];
+    return stored;
   } catch {
     return defaultProfile;
   }
@@ -69,7 +74,16 @@ export function UserProvider({ children }: { children: ReactNode }) {
     setProfile(defaultProfile);
   };
 
-  const value = { profile, hydrated, completeOnboarding, resetProfile };
+  const toggleFavoriteSubject = (subjectId: string) => {
+    setProfile((prev) => ({
+      ...prev,
+      favoriteSubjects: prev.favoriteSubjects.includes(subjectId)
+        ? prev.favoriteSubjects.filter((id) => id !== subjectId)
+        : [...prev.favoriteSubjects, subjectId],
+    }));
+  };
+
+  const value = { profile, hydrated, completeOnboarding, resetProfile, toggleFavoriteSubject };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }

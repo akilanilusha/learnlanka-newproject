@@ -1,10 +1,8 @@
 import {
   PiHouse,
   PiBookOpen,
-  PiMagnifyingGlass,
   PiSparkle,
   PiFolders,
-  PiBookmarkSimple,
   PiChartBar,
   PiFileText,
   PiGear,
@@ -84,11 +82,9 @@ export const primarySubjects = [
 // react-router paths, which were relative to the /dashboard parent route.
 export const sidebarNav = [
   { id: "dashboard", label: "Dashboard", icon: PiHouse, path: "/dashboard" },
-  { id: "textbooks", label: "Textbooks", icon: PiBookOpen, path: "/dashboard/textbooks" },
-  { id: "search", label: "Search", icon: PiMagnifyingGlass, path: "/dashboard/search" },
-  { id: "ai-learning", label: "AI Learning", icon: PiSparkle, path: "/dashboard/ai-learning", badge: "New" },
+  { id: "textbooks", label: "Subjects", icon: PiBookOpen, path: "/dashboard/textbooks" },
   { id: "library", label: "My Library", icon: PiFolders, path: "/dashboard/library" },
-  { id: "bookmarks", label: "Bookmarks", icon: PiBookmarkSimple, path: "/dashboard/bookmarks" },
+  { id: "ai-learning", label: "AI Quiz Bot", icon: PiSparkle, path: "/dashboard/ai-learning", badge: "New" },
   { id: "progress", label: "Progress", icon: PiChartBar, path: "/dashboard/progress" },
   { id: "reports", label: "Reports", icon: PiFileText, path: "/dashboard/reports" },
   { id: "settings", label: "Settings", icon: PiGear, path: "/dashboard/settings" },

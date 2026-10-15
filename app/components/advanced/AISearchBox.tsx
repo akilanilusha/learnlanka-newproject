@@ -219,7 +219,8 @@ export default function AISearchBox({
             <button
               onClick={onToggleExpand}
               title="Collapse"
-              className="w-9 h-9 rounded-full hover:bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 transition-colors"
+              aria-label="Collapse chat"
+              className="w-9 h-9 rounded-full border border-brand-200 bg-brand-50 hover:bg-brand-100 hover:border-brand-300 active:scale-95 flex items-center justify-center text-brand-700 shadow-soft shrink-0 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2"
             >
               <PiArrowsIn size={18} />
             </button>
